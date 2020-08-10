@@ -7,8 +7,8 @@ export interface IContext {
   app: express.Application;
   db: {
     connection: Connection;
-    movie: MovieRepository;
-    translaction: TranslactionRepository;
+    movies: MovieRepository;
+    translactions: TranslactionRepository;
   };
 }
 
@@ -34,8 +34,8 @@ export class Context {
       captureException: () => null,
       db: {
         connection,
-        movie: connection.getCustomRepository(MovieRepository),
-        translaction: connection.getCustomRepository(TranslactionRepository),
+        movies: connection.getCustomRepository(MovieRepository),
+        translactions: connection.getCustomRepository(TranslactionRepository),
       },
     };
   }

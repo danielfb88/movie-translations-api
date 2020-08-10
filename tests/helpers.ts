@@ -64,8 +64,8 @@ export function makeCtx(ctx: DeepPartial<IContext>) {
     captureException: () => null,
     db: {
       connection,
-      movie: connection.getCustomRepository(MovieRepository),
-      translaction: connection.getCustomRepository(TranslactionRepository),
+      movies: connection.getCustomRepository(MovieRepository),
+      translactions: connection.getCustomRepository(TranslactionRepository),
     },
     ...ctx,
   } as IContext;

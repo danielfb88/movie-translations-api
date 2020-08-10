@@ -11,16 +11,16 @@ describe("Database tests", () => {
   });
 
   beforeEach(async () => {
-    await ctx.db.movie.delete({});
-    await ctx.db.translaction.delete({});
+    await ctx.db.movies.delete({});
+    await ctx.db.translactions.delete({});
   });
 
   describe("Translaction", () => {
     test("Should create a translaction", async done => {
-      const createdMovie = await ctx.db.movie.save(mockMovie());
+      const createdMovie = await ctx.db.movies.save(mockMovie());
 
       const newTranslaction = mockTranslaction(createdMovie.id);
-      const createdTranslaction = await ctx.db.translaction.save(newTranslaction);
+      const createdTranslaction = await ctx.db.translactions.save(newTranslaction);
 
       expect(createdTranslaction.movieId).toEqual(createdMovie.id);
       expect(createdTranslaction.englishName).toEqual(newTranslaction.englishName);
