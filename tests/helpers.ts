@@ -5,7 +5,7 @@ import { Connection, createConnection, getConnectionOptions } from "typeorm";
 import { PostgresConnectionOptions } from "typeorm/driver/postgres/PostgresConnectionOptions";
 import App from "../src/App";
 import { Context, IContext } from "../src/Context";
-import { MovieRepository, TranslactionRepository } from "../src/repositories";
+import { MovieRepository, TranslationRepository } from "../src/repositories";
 
 process.env.TZ = "UTC";
 
@@ -65,7 +65,7 @@ export function makeCtx(ctx: DeepPartial<IContext>) {
     db: {
       connection,
       movies: connection.getCustomRepository(MovieRepository),
-      translactions: connection.getCustomRepository(TranslactionRepository),
+      translations: connection.getCustomRepository(TranslationRepository),
     },
     ...ctx,
   } as IContext;

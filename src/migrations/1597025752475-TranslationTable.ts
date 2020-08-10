@@ -1,10 +1,10 @@
 import { MigrationInterface, QueryRunner } from "typeorm";
 
-export class TranslactionTable1597025752475 implements MigrationInterface {
+export class TranslationTable1597025752475 implements MigrationInterface {
 
     public async up(queryRunner: QueryRunner): Promise<any> {
         await queryRunner.query(`
-            CREATE TABLE "translactions" (
+            CREATE TABLE "translations" (
                 "id" uuid NOT NULL PRIMARY KEY DEFAULT uuid_generate_v4(), 
                 "movie_id" uuid NOT NULL REFERENCES movies(id),
                 "iso_3166_1" TEXT NOT NULL,
@@ -19,7 +19,7 @@ export class TranslactionTable1597025752475 implements MigrationInterface {
     }
 
     public async down(queryRunner: QueryRunner): Promise<any> {
-        await queryRunner.query(`DROP TABLE "translactions"`, undefined);
+        await queryRunner.query(`DROP TABLE "translations"`, undefined);
     }
 
 }

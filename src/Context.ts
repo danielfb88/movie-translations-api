@@ -1,6 +1,8 @@
+import { AxiosInstance } from "axios";
 import * as express from "express";
 import { Connection } from "typeorm";
-import { MovieRepository, TranslactionRepository } from "./repositories";
+import { createTheMovieDBAxiosClient } from "./integrations/themoviedb";
+import { MovieRepository, TranslationRepository } from "./repositories";
 
 export interface IContext {
   captureException(error: Error): void;
@@ -8,7 +10,10 @@ export interface IContext {
   db: {
     connection: Connection;
     movies: MovieRepository;
-    translactions: TranslactionRepository;
+    translations: TranslationRepository;
+  };
+  integrations: {
+    themoviedb: AxiosInstance;
   };
 }
 
@@ -35,7 +40,10 @@ export class Context {
       db: {
         connection,
         movies: connection.getCustomRepository(MovieRepository),
-        translactions: connection.getCustomRepository(TranslactionRepository),
+        translations: connection.getCustomRepository(TranslationRepository),
+      },
+      integrations: {
+        themoviedb: createTheMovieDBAxiosClient(),
       },
     };
   }

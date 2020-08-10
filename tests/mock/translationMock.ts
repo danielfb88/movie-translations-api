@@ -1,15 +1,15 @@
 /* eslint-disable @typescript-eslint/camelcase */
 import * as faker from "faker";
-import { ITranslaction } from "../../src/types";
+import { ITranslation } from "../../src/integrations/themoviedb/theMovieDBTypes";
 
 /**
- * Mock translaction
+ * Mock translation
  *
  * @export
  * @param {number} apiMovie
- * @returns {ITranslaction}
+ * @returns {ITranslation}
  */
-export function mockTranslaction(movieId: string): ITranslaction {
+export function mockTranslation(movieId: string): ITranslation {
   return {
     englishName: faker.random.words(),
     homepage: faker.internet.domainName(),

@@ -1,7 +1,7 @@
 import { IContext } from "../src/Context";
 import { makeCtx } from "./helpers";
 import { mockMovie } from "./mock/movieMock";
-import { mockTranslaction } from "./mock/translactionMock";
+import { mockTranslation } from "./mock/translationMock";
 
 let ctx: IContext;
 
@@ -12,15 +12,15 @@ describe("Database tests", () => {
 
   beforeEach(async () => {
     await ctx.db.movies.delete({});
-    await ctx.db.translactions.delete({});
+    await ctx.db.translations.delete({});
   });
 
   describe("Translaction", () => {
-    test("Should create a translaction", async done => {
+    test("Should create a translation", async done => {
       const createdMovie = await ctx.db.movies.save(mockMovie());
 
-      const newTranslaction = mockTranslaction(createdMovie.id);
-      const createdTranslaction = await ctx.db.translactions.save(newTranslaction);
+      const newTranslaction = mockTranslation(createdMovie.id);
+      const createdTranslaction = await ctx.db.translations.save(newTranslaction);
 
       expect(createdTranslaction.movieId).toEqual(createdMovie.id);
       expect(createdTranslaction.englishName).toEqual(newTranslaction.englishName);
