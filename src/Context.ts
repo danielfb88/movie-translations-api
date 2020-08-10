@@ -1,6 +1,6 @@
 import * as express from "express";
 import { Connection } from "typeorm";
-import { MovieRepository } from "./repositories";
+import { MovieRepository, TranslactionRepository } from "./repositories";
 
 export interface IContext {
   captureException(error: Error): void;
@@ -8,6 +8,7 @@ export interface IContext {
   db: {
     connection: Connection;
     movie: MovieRepository;
+    translaction: TranslactionRepository;
   };
 }
 
@@ -34,6 +35,7 @@ export class Context {
       db: {
         connection,
         movie: connection.getCustomRepository(MovieRepository),
+        translaction: connection.getCustomRepository(TranslactionRepository),
       },
     };
   }

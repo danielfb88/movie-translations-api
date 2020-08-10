@@ -6,8 +6,8 @@ export class MoviesTable1597024258125 implements MigrationInterface {
         await queryRunner.query(`
             CREATE TABLE "movies" (
                 "id" uuid NOT NULL PRIMARY KEY DEFAULT uuid_generate_v4(), 
-                "imdb_id" TEXT NOT NULL,
-                "original_title" TEXT NOT NULL,
+                "api_movie_id" INT NOT NULL,
+                "original_title" TEXT NOT NULL
             );
         `, undefined);
     }

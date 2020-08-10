@@ -15,6 +15,7 @@ module.exports = {
     "/src/helpers/env.ts",
     "/src/errorHandlerApi.ts",
     "/src/errors/",
+    "src/Context.ts",
   ],
   coverageReporters: ["json-summary", "lcov", "text"],
   coverageThreshold: {
