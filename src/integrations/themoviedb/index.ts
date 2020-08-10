@@ -18,7 +18,7 @@ export function createTheMovieDBAxiosClient() {
     baseURL: BASE_URL,
     data: {
       json: true,
-      params: { hapikey: API_KEY },
+      params: { api_key: API_KEY },
       resolveWithFullResponse: true,
     },
   });

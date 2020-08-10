@@ -15,7 +15,6 @@ describe("Integration tests", () => {
 
   describe("Movie", () => {
     test("Should get a movie", async done => {
-      console.log("test");
       done();
     });
   });

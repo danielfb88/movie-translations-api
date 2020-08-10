@@ -1,7 +1,7 @@
-import { IContext } from "../src/Context";
-import { makeCtx } from "./helpers";
-import { mockMovie } from "./mock/movieMock";
-import { mockTranslation } from "./mock/translationMock";
+import { IContext } from "../../src/Context";
+import { makeCtx } from "./../helpers";
+import { mockMovie } from "./../mock/movieMock";
+import { mockTranslation } from "./../mock/translationMock";
 
 let ctx: IContext;
 
