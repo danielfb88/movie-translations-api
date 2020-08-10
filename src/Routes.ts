@@ -1,4 +1,5 @@
 import { Application } from "express";
+import movieRoute from "./routes/MovieRoute";
 
 class Routes {
   /**
@@ -8,7 +9,9 @@ class Routes {
    * @memberof Routes
    */
   initRoutes(app: Application): void {
-    console.log("Routes here");
+    app.route("/api/movie/:movieId").get((req, res) => {
+      movieRoute.getMovie(req, res);
+    });
   }
 }
 
