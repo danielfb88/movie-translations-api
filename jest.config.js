@@ -16,6 +16,7 @@ module.exports = {
     "/src/errorHandlerApi.ts",
     "/src/errors/",
     "src/Context.ts",
+    "src/integrations/themoviedb/index.ts",
   ],
   coverageReporters: ["json-summary", "lcov", "text"],
   coverageThreshold: {

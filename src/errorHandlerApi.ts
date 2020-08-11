@@ -22,7 +22,7 @@ export function internalErrorResponse(res: Response, message: string) {
  * @param {string} message
  */
 export function notFoundResponse(res: Response, message: string) {
-  res.status(HTTPStatus.INTERNAL_SERVER_ERROR).json({ errorCode: "ERR-002", message });
+  res.status(HTTPStatus.NOT_FOUND).json({ errorCode: "ERR-002", message });
 }
 
 /**

@@ -10,8 +10,8 @@ describe("Database tests", () => {
   });
 
   beforeEach(async () => {
-    await ctx.db.movies.delete({});
     await ctx.db.translations.delete({});
+    await ctx.db.movies.delete({});
   });
 
   describe("Movie", () => {

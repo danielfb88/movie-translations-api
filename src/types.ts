@@ -1,4 +1,5 @@
 export interface IMovie {
+  id: string;
   apiMovieId: number;
   originalTitle: string;
 }
@@ -14,7 +15,7 @@ export interface ITranslation {
   homepage?: string;
 }
 
-export interface IMovieTranslation {
+export interface IMovieTranslations {
   movie: IMovie;
   translations: ITranslation[];
 }
