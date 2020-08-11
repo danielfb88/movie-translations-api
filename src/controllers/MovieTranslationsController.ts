@@ -26,7 +26,10 @@ class MovieTranslationsController {
 
       if (localMovie) {
         data = {
-          movie: localMovie,
+          movie: {
+            apiMovieId: localMovie.apiMovieId,
+            originalTitle: localMovie.originalTitle,
+          },
           translations: await Context.getInstance().db.translations.find({ where: { movieId: localMovie.id } }),
         };
       } else {

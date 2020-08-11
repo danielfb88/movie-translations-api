@@ -42,7 +42,6 @@ class MovieTranslationsService {
       return {
         movie: {
           apiMovieId: movieId,
-          id: createdMovie.id,
           originalTitle: createdMovie.originalTitle,
         } as IMovie,
         translations: translationsReturn,

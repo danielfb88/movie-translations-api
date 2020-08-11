@@ -1,5 +1,4 @@
 export interface IMovie {
-  id: string;
   apiMovieId: number;
   originalTitle: string;
 }

@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/camelcase */
 import * as faker from "faker";
-import { ITranslation } from "../../src/integrations/themoviedb/theMovieDBTypes";
+import { ITranslation } from "../../src/types";
 
 /**
  * Mock translation
