@@ -18,7 +18,6 @@ export function createTheMovieDBAxiosClient() {
     baseURL: BASE_URL,
     data: {
       json: true,
-      params: { api_key: API_KEY },
       resolveWithFullResponse: true,
     },
   });
@@ -57,7 +56,9 @@ export async function getMovie(movieId: number): Promise<IGetMovieResponse> {
   const endpoint = `/movie/${movieId}`;
 
   try {
-    const result = await Context.getInstance().integrations.themoviedb.get<IGetMovieResponse>(endpoint);
+    const result = await Context.getInstance().integrations.themoviedb.get<IGetMovieResponse>(endpoint, {
+      params: { api_key: API_KEY },
+    });
 
     return result.data;
   } catch (err) {
@@ -77,7 +78,9 @@ export async function getTranslations(movieId: number): Promise<IGetTranslaction
   const endpoint = `/movie/${movieId}/translations`;
 
   try {
-    const result = await Context.getInstance().integrations.themoviedb.get<IGetTranslactionsResponse>(endpoint);
+    const result = await Context.getInstance().integrations.themoviedb.get<IGetTranslactionsResponse>(endpoint, {
+      params: { api_key: API_KEY },
+    });
 
     return result.data;
   } catch (err) {

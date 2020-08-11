@@ -1,8 +1,8 @@
 import { Context } from "../Context";
 import { getMovie, getTranslations } from "../integrations/themoviedb";
-import { IMovie, ITranslation } from "../integrations/themoviedb/theMovieDBTypes";
+import { IMovie, ITranslation } from "../types";
 
-class MovieService {
+class MovieTranslationService {
   /**
    * Persist movie and translations from external api
    *
@@ -46,4 +46,4 @@ class MovieService {
     };
   }
 }
-export default new MovieService();
+export default new MovieTranslationService();
